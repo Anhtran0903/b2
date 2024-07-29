@@ -1,0 +1,22 @@
+
+.container{
+    margin: 100px auto;
+    background-color: aquamarine;
+}
+
+.TT{
+    margin-left: 10px;
+    color: black;
+    font-weight: lighter;
+    font-size: larger;
+    transform: translate(10px, 10px);
+}
+.TT.active{
+    color: red;
+    text-decoration: line-through;
+}
+.checkB{
+   position: absolute;
+   left: 4px;
+   z-index: 1;
+}
