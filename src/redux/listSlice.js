@@ -1,10 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-useEffect(() => {
-    if (localStorage.getItem("item")) {
-        setData(JSON.parse(localStorage.getItem("item")))
-    }
-}, [])
+
 
 const initialState={
     student:[
