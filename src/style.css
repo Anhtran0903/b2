@@ -20,3 +20,8 @@
    left: 4px;
    z-index: 1;
 }
+.TTsp{
+    overflow: hidden;
+    border-radius: 9px;
+    margin: 2px;
+}

@@ -9,7 +9,7 @@ export default function Add(props) {
         <Input type='text' placeholder='nhap ten'  value={text} onChange={(e)=>setText(e.target.value)} onKeyDown={(e)=>{
 
         
-            if(e.key=="Enter" && text!=""){
+            if(e.key==="Enter" && text!==""){
                 setText("")
                 handAdd(text);
             }else{
