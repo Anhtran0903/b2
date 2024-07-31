@@ -1,5 +1,5 @@
 
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Link, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Cart from './component/cart/Cart';
 import Products from './component/cart/Products';
@@ -17,7 +17,7 @@ import ListHome from './page/ListHome';
 function App() {
   return (
   <>
-    <BrowserRouter>
+    <HashRouter>
 
 
 
@@ -27,7 +27,7 @@ function App() {
 <Route   path='/list' element={<ListHome/>}/>
 
 </Routes>
-    </BrowserRouter>
+    </HashRouter>
   </>
   );
 }
