@@ -21,7 +21,7 @@ export default function Products() {
     return (
         <>
 
-                       <p className='text-end m-5'>   cart   </p>
+                  
 
             <Container>
                

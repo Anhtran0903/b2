@@ -25,3 +25,36 @@
     border-radius: 9px;
     margin: 2px;
 }
+
+.TTa{
+
+}
+.TTa.active{
+    color: red;
+    text-decoration: line-through;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: lighter;
+    font-size: 30px;
+
+}
+.nav-item{
+    position: relative;
+}
+a::after{
+    position: absolute;
+    top: 98%;
+    width: 0%;
+    content: '';
+    height: 2px;
+   left: 0%;
+    background-color: rgb(57, 150, 212);
+    transition: 1s;
+}
+
+a:hover a::after{
+    width: 100%;
+}

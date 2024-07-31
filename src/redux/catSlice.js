@@ -1,11 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import axios from "axios"
-
-
-
-
-
-
+import { useEffect } from "react"
 
 
 const initialState = {
@@ -17,10 +12,11 @@ const initialState = {
 
 }
 const url = "https://66a0a2837053166bcabc1470.mockapi.io/student"
-export const fetchCats = createAsyncThunk('cats/fetchCats', async () => {
+export const   fetchCats = createAsyncThunk('cats/fetchCats', async () => {
     const res = await axios.get(url)
     return res.data;
 })
+
 
 
 export const deleteCat = createAsyncThunk("cats/deleteCat", async (id) => {

@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { deleteCat, fetchCats } from '../../redux/catSlice';
-import { Button, Table } from 'reactstrap';
+import { deleteCat, fetchCats, reCheckCat } from '../../redux/catSlice';
+import { Button, Container, Table } from 'reactstrap';
+import Add from './Add';
 
 export default function CatList() {
     const dispatch = useDispatch()
@@ -12,65 +13,75 @@ export default function CatList() {
     }, []);
 
 
-    const handle_delete = (id)=>{
+    const handle_delete = (id) => {
         dispatch(deleteCat(id));
+
+    }
+    const  handle_recheck =(id)=>{
+        dispatch( reCheckCat(id));
+     
+
     }
     return (
         <div>
 
-            <Table
-                dark
-                responsive
-            >
-                <thead>
-                    <tr>
-                        <th>
-                            #
-                        </th>
-                        <th>
-                            First Name
-                        </th>
-                        <th>
-                            Last Name
-                        </th>
-                        <th>
-                            Username
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                   
+            <Container>
+        <Add/>
+                <Table
+                    dark
+                    responsive
+                >
+                    <thead>
+                        <tr>
+                            <th>
+                                #
+                            </th>
+                            <th>
+                                First Name
+                            </th>
+                            <th>
+                                Last Name
+                            </th>
+                            <th>
+                                Username
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
                         {
                             cats.map((item, index) =>
-           
-                                <tr>
-        <th scope="row">
-          {index}
-        </th>
-        <td>
-       {item.name}
-        </td>
-        <td>
-        {item.id}
-        </td>
-        <td>
-       <Button onClick={()=>handle_delete(item.id)}>X</Button>
-        </td>
-        </tr>
+
+                                <tr className={item.checked==true? "TTa active": "TTa"}  >
+                                    <th scope="row">
+                                        {index}
+                                    </th>
+                                    <td>
+                                        <p onClick={()=>handle_recheck(item)}>  {item.name}</p>
+                                      
+                                    </td>
+                                    <td>
+                                        {item.id}
+                                    </td>
+                                    <td>
+                                        <Button onClick={() => handle_delete(item.id)}>X</Button>
+                                    </td>
+                                </tr>
                             )
 
 
                         }
 
-                   
-
-                </tbody>
-            </Table>
 
 
+                    </tbody>
+                </Table>
 
 
+
+                </Container >
 
         </div>
+       
     )
 }
